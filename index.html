@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let ask = prompt("what what", "")
+
+        let playerSelection = ask.toLowerCase();
+
+
+
+        console.log(play(playerSelection, getComputerChoice()))
+
+
+
+        // function playerSelection(x) {
+        //     x = prompt("what?", "")
+
+        // }
+
+
+
+        function play(playerSelection, computerSelection) {
+
+
+            if (playerSelection === computerSelection) { return `draw` }
+            else if (playerSelection === "rock" && computerSelection !== "paper") {
+                return `You Win!, ${playerSelection} beats ${computerSelection}`
+            }
+            else if (playerSelection === "paper" && computerSelection !== "scissors") {
+                return `You Win!, ${playerSelection} beats ${computerSelection}`
+            }
+            else if (playerSelection === "scissors" && computerSelection !== "rock") {
+                return `You Win!, ${playerSelection} beats ${computerSelection}`
+            } else { return `You Lose!, Paper beats ${playerSelection}` }
+
+        }
+
+
+
+
+        function getComputerChoice() {
+            let x = Math.random() * 100;
+            if (x < 34) { return "rock" }
+            else if (x < 67) { return "paper" }
+            else { return "scissors" }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
