@@ -13,7 +13,7 @@
 
 
 
-        console.log(game())
+        game()
 
 
         function game() {
@@ -23,7 +23,8 @@
             let y = 0;
             for (let i = 0; i < 5; i++) {
 
-                const playerSelection = "rock";
+                const ask = prompt("what what", "");
+                playerSelection = ask.toLowerCase();
                 computerSelection = getComputerChoice();
                 let winorlose = playRound(playerSelection, computerSelection)
                 if (winorlose === 1) { x++ }
@@ -42,18 +43,12 @@
 
         }
 
-        // let ask = prompt("what what", "")
-
-        // playerSel = ask.toLowerCase();
-
-
-
 
 
         function playRound(playerSelection, computerSelection) {
 
             if (playerSelection === computerSelection) {
-                alert("both chose same, draw")
+                alert("Both chose same, draw")
                 return 2;
             }
             else if (playerSelection === "rock" && computerSelection !== "paper") {
@@ -69,7 +64,7 @@
                 return 1;
             }
             else {
-                alert(`You Lose!, Paper beats ${playerSelection}`)
+                alert(`You Lose!, ${computerSelection} beats ${playerSelection}`)
                 return 0;
             }
 
